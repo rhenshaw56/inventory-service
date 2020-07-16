@@ -8,7 +8,7 @@ func Middleware(handler http.Handler) http.Handler {
 		w.Header().Add("Access-Control-Allow-Origin", "*")
 		w.Header().Add("Content-Type", "application/json")
 		w.Header().Add("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
-		w.Header().Add("Access-Control-Allow-Headerss", "Accept, Content-Type, Content-Length, Accept-Language")
+		w.Header().Add("Access-Control-Allow-Headerss", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
 		// fmt.Println("before handler; middleware start")
 		// start := time.Now()
 		handler.ServeHTTP(w, r)
